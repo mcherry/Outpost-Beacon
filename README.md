@@ -1,4 +1,4 @@
-# Firewatch Pro
+# Watchtower
 
 A macOS menu bar app that monitors the health of key infrastructure services at a glance.
 
@@ -43,16 +43,16 @@ A macOS menu bar app that monitors the health of key infrastructure services at 
 
 ## Installation
 
-Firewatch Pro is available on the [Mac App Store](https://apps.apple.com/app/firewatch-pro/id0000000000).
+Watchtower is available on the [Mac App Store](https://apps.apple.com/app/watchtower/id0000000000).
 
 <!-- TODO: Replace with actual App Store link and badge -->
 
 ## Custom Status Checks
 
-Firewatch Pro runs JavaScript check scripts using Apple's built-in JavaScriptCore engine — no external runtime required. Scripts live in:
+Watchtower runs JavaScript check scripts using Apple's built-in JavaScriptCore engine — no external runtime required. Scripts live in:
 
 ```
-~/Library/Application Support/Firewatch Pro/checks/
+~/Library/Application Support/Watchtower/checks/
 ```
 
 ### Available Functions
@@ -72,8 +72,8 @@ Firewatch Pro runs JavaScript check scripts using Apple's built-in JavaScriptCor
 ### Example: Statuspage.io Service
 
 ```javascript
-// FIREWATCH_NAME = "GitHub"
-// FIREWATCH_URL = "https://www.githubstatus.com"
+// WATCHTOWER_NAME = "GitHub"
+// WATCHTOWER_URL = "https://www.githubstatus.com"
 
 statuspageCheck("https://www.githubstatus.com/api/v2/summary.json");
 ```
@@ -81,8 +81,8 @@ statuspageCheck("https://www.githubstatus.com/api/v2/summary.json");
 ### Example: HTTP Health Check
 
 ```javascript
-// FIREWATCH_NAME = "My API"
-// FIREWATCH_URL = "https://api.example.com"
+// WATCHTOWER_NAME = "My API"
+// WATCHTOWER_URL = "https://api.example.com"
 
 try {
     fetch("https://api.example.com/health");
@@ -95,7 +95,7 @@ try {
 ### Example: TCP Port Check
 
 ```javascript
-// FIREWATCH_NAME = "Database"
+// WATCHTOWER_NAME = "Database"
 
 var result = tcpCheck("db.example.com", 5432, { timeout: 3 });
 output({
@@ -108,12 +108,12 @@ For more examples and the full scripting reference, see the [Scripting Guide](do
 
 ## Support
 
-- **Bug reports & feature requests** — [open an issue](https://github.com/mcherry/firewatch-pro/issues)
+- **Bug reports & feature requests** — [open an issue](https://github.com/mcherry/Watchtower/issues)
 - **Email** — mcherry@inditech.org
 
 ## Privacy
 
-Firewatch Pro does not collect, transmit, or share any personal data. See the full [Privacy Policy](https://mcherry.github.io/firewatch-pro/privacy.html).
+Watchtower does not collect, transmit, or share any personal data. See the full [Privacy Policy](https://mcherry.github.io/Watchtower/privacy.html).
 
 ## License
 

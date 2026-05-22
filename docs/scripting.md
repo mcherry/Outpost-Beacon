@@ -1,26 +1,26 @@
 # Scripting Guide
 
-Firewatch Pro uses JavaScript check scripts to monitor services. Scripts are executed via Apple's built-in JavaScriptCore engine — no external runtime needed.
+Watchtower uses JavaScript check scripts to monitor services. Scripts are executed via Apple's built-in JavaScriptCore engine — no external runtime needed.
 
 ## Script Location
 
 Scripts live in:
 
 ```
-~/Library/Application Support/Firewatch Pro/checks/
+~/Library/Application Support/Watchtower/checks/
 ```
 
-On first launch, Firewatch Pro copies default check scripts into this directory.
+On first launch, Watchtower copies default check scripts into this directory.
 
 ## Script Metadata
 
-Add comment directives at the top of your script to configure how Firewatch Pro handles it:
+Add comment directives at the top of your script to configure how Watchtower handles it:
 
 | Directive | Required | Description |
 |-----------|----------|-------------|
-| `// FIREWATCH_NAME = "My Service"` | No | Display name (defaults to filename) |
-| `// FIREWATCH_URL = "https://..."` | No | Status page URL for the service |
-| `// FIREWATCH_INTERVAL = "60"` | No | Custom polling interval in seconds (minimum 30) |
+| `// WATCHTOWER_NAME = "My Service"` | No | Display name (defaults to filename) |
+| `// WATCHTOWER_URL = "https://..."` | No | Status page URL for the service |
+| `// WATCHTOWER_INTERVAL = "60"` | No | Custom polling interval in seconds (minimum 30) |
 
 ## Available Functions
 
@@ -93,8 +93,8 @@ Only `status` is required. Everything else is optional:
 ### Statuspage.io Service
 
 ```javascript
-// FIREWATCH_NAME = "GitHub"
-// FIREWATCH_URL = "https://www.githubstatus.com"
+// WATCHTOWER_NAME = "GitHub"
+// WATCHTOWER_URL = "https://www.githubstatus.com"
 
 statuspageCheck("https://www.githubstatus.com/api/v2/summary.json");
 ```
@@ -102,8 +102,8 @@ statuspageCheck("https://www.githubstatus.com/api/v2/summary.json");
 ### Simple Health Check
 
 ```javascript
-// FIREWATCH_NAME = "My API"
-// FIREWATCH_URL = "https://api.example.com"
+// WATCHTOWER_NAME = "My API"
+// WATCHTOWER_URL = "https://api.example.com"
 
 try {
     fetch("https://api.example.com/health");
@@ -116,8 +116,8 @@ try {
 ### HTTP Status Code Check
 
 ```javascript
-// FIREWATCH_NAME = "My API"
-// FIREWATCH_URL = "https://api.example.com"
+// WATCHTOWER_NAME = "My API"
+// WATCHTOWER_URL = "https://api.example.com"
 
 var res = fetchResponse("https://api.example.com/health");
 
@@ -135,7 +135,7 @@ if (res.status === 503) {
 ### TCP Port Check
 
 ```javascript
-// FIREWATCH_NAME = "Database Cluster"
+// WATCHTOWER_NAME = "Database Cluster"
 
 var primary = tcpCheck("db-primary.example.com", 5432, { timeout: 3 });
 var replica = tcpCheck("db-replica.example.com", 5432, { timeout: 3 });
@@ -163,8 +163,8 @@ output({ status: status, components: components, responseTimeMs: primary.latency
 ### Custom API with Components
 
 ```javascript
-// FIREWATCH_NAME = "Internal Platform"
-// FIREWATCH_URL = "https://status.internal.example.com"
+// WATCHTOWER_NAME = "Internal Platform"
+// WATCHTOWER_URL = "https://status.internal.example.com"
 
 var data = fetch("https://status.internal.example.com/api/health");
 

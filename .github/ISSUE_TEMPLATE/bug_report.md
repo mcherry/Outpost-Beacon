@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a problem with Firewatch Pro
+about: Report a problem with Watchtower
 title: ''
 labels: bug
 assignees: ''
@@ -22,7 +22,7 @@ What actually happened.
 
 **Environment**
 - macOS version: 
-- Firewatch Pro version: 
+- Watchtower version: 
 - Relevant check script (if applicable):
 
 **Screenshots**

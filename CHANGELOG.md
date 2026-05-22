@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Firewatch Pro are documented here.
+All notable changes to Watchtower are documented here.
 
 ## [1.0] — 2026-05-22
 
