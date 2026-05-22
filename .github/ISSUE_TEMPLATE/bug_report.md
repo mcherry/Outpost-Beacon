@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a problem with Watchtower
+about: Report a problem with Outpost Beacon
 title: ''
 labels: bug
 assignees: ''
@@ -22,7 +22,7 @@ What actually happened.
 
 **Environment**
 - macOS version: 
-- Watchtower version: 
+- Outpost Beacon version: 
 - Relevant check script (if applicable):
 
 **Screenshots**
