@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firewatch Pro — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 680px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #1d1d1f;
+    background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #f5f5f7; background: #1c1c1e; }
+    a { color: #64d2ff; }
+    h1, h2 { color: #f5f5f7; }
+  }
+  h1 { font-size: 1.8em; margin-bottom: 0.2em; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; border-bottom: 1px solid #d2d2d7; padding-bottom: 0.3em; }
+  .effective { color: #86868b; font-size: 0.95em; margin-top: 0; }
+  ul { padding-left: 1.4em; }
+  li { margin-bottom: 0.4em; }
+  .contact { margin-top: 2em; padding: 16px; background: #f5f5f7; border-radius: 8px; }
+  @media (prefers-color-scheme: dark) { .contact { background: #2c2c2e; } }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="effective">Effective date: May 22, 2026</p>
+
+<p>Firewatch Pro is a macOS menu bar application developed by Mike Cherry. This policy explains what data the app handles and how it is stored.</p>
+
+<h2>Data Collection</h2>
+<p><strong>Firewatch Pro does not collect, transmit, or share any personal data.</strong> The app has no user accounts, no analytics, no telemetry, and no advertising.</p>
+
+<h2>Data Stored on Your Device</h2>
+<p>All data created by Firewatch Pro stays on your Mac:</p>
+<ul>
+  <li><strong>Preferences</strong> — settings such as your refresh interval and notification preferences are stored in the app's local UserDefaults container.</li>
+  <li><strong>Uptime history</strong> — if you enable uptime logging, service health records and response times are stored in a local SQLite database at <code>~/Library/Application Support/Firewatch Pro/uptime.sqlite</code>.</li>
+  <li><strong>Check scripts</strong> — your custom JavaScript check scripts are stored locally at <code>~/Library/Application Support/Firewatch Pro/checks/</code>.</li>
+</ul>
+<p>None of this data is sent to the developer or any third party.</p>
+
+<h2>Network Activity</h2>
+<p>Firewatch Pro makes outbound network requests in two situations:</p>
+<ul>
+  <li><strong>Service health checks</strong> — the app connects to URLs and hosts that <em>you</em> configure in your check scripts (e.g., status pages, HTTP endpoints, TCP ports). These requests are made directly from your device; no proxy or intermediary server is involved.</li>
+  <li><strong>Update checks</strong> — if automatic update checking is enabled, the app periodically fetches a small version file from GitHub (<code>raw.githubusercontent.com</code>) to determine whether a newer release is available. No identifying information is sent with this request beyond what the operating system includes by default.</li>
+</ul>
+<p>The app does not operate any servers and does not receive any data from your device.</p>
+
+<h2>Third-Party Services</h2>
+<p>Firewatch Pro does not integrate any third-party SDKs, analytics frameworks, or advertising networks. The only third-party service contacted is GitHub, solely for the optional update check described above.</p>
+
+<h2>macOS Permissions</h2>
+<p>The app runs in the macOS App Sandbox and requests only:</p>
+<ul>
+  <li><strong>Outgoing network connections</strong> — required to perform health checks and update checks.</li>
+  <li><strong>User-selected file access</strong> — required to export uptime reports (CSV/PDF) to a location you choose via a save dialog.</li>
+</ul>
+<p>The app may also request permission to deliver macOS notifications if you enable status change alerts.</p>
+
+<h2>Children's Privacy</h2>
+<p>Firewatch Pro is a general-purpose utility and does not knowingly collect any information from anyone, including children under 13.</p>
+
+<h2>Changes to This Policy</h2>
+<p>If this policy is updated, the revised version will be posted at this URL with a new effective date. Because the app collects no data, material changes are unlikely.</p>
+
+<div class="contact">
+  <h2 style="border: none; margin-top: 0; padding: 0;">Contact</h2>
+  <p style="margin-bottom: 0;">If you have questions about this privacy policy or Firewatch Pro, you can:<br>
+  <a href="https://github.com/mcherry/firewatch-pro/issues">Open an issue on GitHub</a> · <a href="mailto:mcherry@inditech.org">mcherry@inditech.org</a></p>
+</div>
+
+</body>
+</html>
