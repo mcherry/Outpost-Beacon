@@ -108,8 +108,9 @@ For more examples and the full scripting reference, see the [Scripting Guide](do
 
 ## Support
 
+- **Support page** — [Outpost Beacon Support](https://mcherry.github.io/Outpost-Beacon/support.html)
 - **Bug reports & feature requests** — [open an issue](https://github.com/mcherry/Outpost-Beacon/issues)
-- **Email** — mcherry@inditech.org
+- **Email** — info@inditech.org
 
 ## Privacy
 
