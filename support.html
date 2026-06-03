@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outpost Beacon — Support</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 680px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #1d1d1f;
+    background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #f5f5f7; background: #1c1c1e; }
+    a { color: #64d2ff; }
+    h1, h2 { color: #f5f5f7; }
+  }
+  h1 { font-size: 1.8em; margin-bottom: 0.2em; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; border-bottom: 1px solid #d2d2d7; padding-bottom: 0.3em; }
+  ul { padding-left: 1.4em; }
+  li { margin-bottom: 0.4em; }
+  .contact { margin-top: 2em; padding: 16px; background: #f5f5f7; border-radius: 8px; }
+  @media (prefers-color-scheme: dark) { .contact { background: #2c2c2e; } }
+</style>
+</head>
+<body>
+
+<h1>Support</h1>
+<p>This is the official support page for Outpost Beacon. If you have a question, found a bug, or want to suggest a feature, you're in the right place.</p>
+
+<h2>Support Scope</h2>
+<p>Full support is provided for the Outpost Beacon app itself — the UI, built-in features, default check scripts, and the scripting API.</p>
+<p><strong>Custom check scripts</strong> are your own code. We can offer limited, best-effort guidance (pointing you to the right API function, explaining error messages, etc.), but we can't debug or troubleshoot custom scripts for you. The built-in editor's Run button and console output are the best tools for diagnosing script issues.</p>
+
+<h2>Common Questions</h2>
+<ul>
+  <li><strong>How do I add a custom service to monitor?</strong> — Settings → Scripts → click the <strong>+</strong> button to open the Script Wizard, or write a <code>.js</code> file and place it in the checks folder (Settings → Scripts → Open Scripts Folder).</li>
+  <li><strong>How do I change how often services are polled?</strong> — Settings → General → Refresh Interval. You can also set per-script intervals with <code>// OUTPOST_INTERVAL = "60"</code> in the script header.</li>
+  <li><strong>Why does a service show as "Unknown"?</strong> — The check script didn't call <code>output()</code>, or it threw an error. Open the script in the editor, click Run, and check the console output for errors.</li>
+  <li><strong>Where is my data stored?</strong>
+    <ul>
+      <li>Scripts: <code>~/Library/Application Support/Outpost Beacon/checks/</code></li>
+      <li>Uptime database: <code>~/Library/Application Support/Outpost Beacon/uptime.sqlite</code></li>
+      <li>Preferences: macOS defaults system</li>
+    </ul>
+  </li>
+  <li><strong>How do I write a check script?</strong> — See the included <code>TEMPLATE.js.example</code> in your scripts folder, or start with the Script Wizard which offers templates for Statuspage.io, HTTP health checks, TCP port checks, and more.</li>
+</ul>
+
+<h2>Report Bugs &amp; Request Features on GitHub</h2>
+<p>If you have a GitHub account, you can file issues directly on the project repository:</p>
+<ul>
+  <li><a href="https://github.com/mcherry/Outpost-Beacon/issues/new?template=bug_report.md">Open a bug report →</a></li>
+  <li><a href="https://github.com/mcherry/Outpost-Beacon/issues/new?template=feature_request.md">Open a feature request →</a></li>
+</ul>
+<p>No GitHub account? No problem — just send an email instead.</p>
+
+<h2>Contact</h2>
+<div class="contact">
+  <p>If you have a question, bug report, or feature request, email us at:</p>
+  <p><strong><a href="mailto:info@inditech.org">info@inditech.org</a></strong></p>
+  <p>We typically respond within a few business days.</p>
+</div>
+
+<h2>Links</h2>
+<ul>
+  <li><a href="https://mcherry.github.io/Outpost-Beacon/privacy.html">Privacy Policy</a></li>
+  <li><a href="https://github.com/mcherry/Outpost-Beacon/blob/main/CHANGELOG.md">Changelog</a></li>
+</ul>
+
+</body>
+</html>
