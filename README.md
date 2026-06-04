@@ -10,8 +10,11 @@ A macOS menu bar app that monitors the health of key infrastructure services at 
 
 - **Menu bar status icon** — changes color and shape to reflect overall service health
 - **Status dashboard** — floating panel shows all monitored services with component-level detail
+- **Dashboard pinning** — pin the dashboard to keep it visible when clicking outside
 - **Service drill-down** — click any service to see components, active incidents, and recent event history
+- **Downtime duration** — non-operational services show how long they've been in their current state
 - **Global keyboard shortcut** — configurable hotkey to toggle the dashboard
+- **Launch at Login** — optional automatic startup when you log in
 - **Background polling** — refreshes service status on a configurable interval, with optional per-script intervals
 - **macOS notifications** — opt-in alerts when a service degrades or recovers
 - **Response time tracking** — measures and displays service response time

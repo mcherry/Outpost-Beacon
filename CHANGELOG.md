@@ -2,6 +2,25 @@
 
 All notable changes to Outpost Beacon are documented here.
 
+## [1.1] — Unreleased
+
+### Added
+- **Launch at Login** — new toggle in Settings → General to start Outpost Beacon automatically when you log in
+- **Dashboard Pinning** — pin button in the dashboard header keeps the panel visible when clicking outside
+- **Downtime Duration** — services in a non-operational state show how long they've been degraded (e.g. "Degraded for 12 min")
+- **Duplicate Script** — new button in Settings → Scripts to clone an existing check script with a modified name
+- **Comment Toggle** — Cmd+/ toggles line comments in the script editor
+- **Line Operations** — Cmd+Shift+K deletes the current line, Cmd+Shift+D duplicates it, Option+Up/Down moves it
+- **Auto-Close Brackets** — typing `(`, `{`, `[`, `"`, `'`, or `` ` `` auto-inserts the closing pair; backspace deletes empty pairs
+- **Word Wrap Toggle** — toolbar button in the script editor to switch between word wrap and horizontal scrolling
+- **Bracket Matching** — matching brackets highlight in blue when the cursor is adjacent; unmatched brackets highlight in red
+
+### Security
+- **Network Access Hardening** — scripts are now blocked from accessing localhost, private IP ranges (RFC 1918), link-local addresses, and cloud metadata endpoints via both HTTP and TCP checks
+
+### Fixed
+- Line numbers no longer overflow into the debug console header when scrolling
+
 ## [1.0] Build 2 — 2026-06-03
 
 ### Fixed
