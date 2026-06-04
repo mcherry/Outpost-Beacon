@@ -43,9 +43,7 @@ A macOS menu bar app that monitors the health of key infrastructure services at 
 
 ## Installation
 
-Outpost Beacon is available on the [Mac App Store](https://apps.apple.com/app/outpost-beacon/id0000000000).
-
-<!-- TODO: Replace with actual App Store link and badge -->
+Outpost Beacon is available on the [Mac App Store](https://apps.apple.com/app/outpost-beacon/id6772313616).
 
 ## Custom Status Checks
 
