@@ -56,6 +56,16 @@ Outpost Beacon runs JavaScript check scripts using Apple's built-in JavaScriptCo
 ~/Library/Application Support/Outpost Beacon/checks/
 ```
 
+### Script Metadata
+
+| Comment Directive | Required | Description |
+|-------------------|----------|-------------|
+| `// OUTPOST_NAME = "My Service"` | No | Display name (defaults to filename without extension) |
+| `// OUTPOST_URL = "https://..."` | No | Status page URL for the service |
+| `// OUTPOST_INTERVAL = "60"` | No | Custom polling interval in seconds (minimum 30) |
+| `// OUTPOST_ICON = "cloud.fill"` | No | SF Symbol name for the service icon in the dashboard. Use the icon picker in the script editor or any [SF Symbol name](https://developer.apple.com/sf-symbols/). |
+| `// OUTPOST_COLOR = "teal"` | No | Icon color. Options: red, blue, green, orange, purple, teal, pink, indigo, mint, yellow, brown, cyan, gray. |
+
 ### Available Functions
 
 | Function | Description |
