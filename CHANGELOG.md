@@ -19,9 +19,11 @@ All notable changes to Outpost Beacon are documented here.
 - **Custom Service Icons** — set a custom SF Symbol icon and color for any service via `OUTPOST_ICON` and `OUTPOST_COLOR` metadata directives, or use the icon picker in the script editor toolbar
 - **Context Menu Shortcuts** — right-click in the script editor to access Toggle Comment, Delete Line, Duplicate Line, and Move Line operations
 - **Keyboard Shortcut Reference** — keyboard icon button in the script editor toolbar shows a quick reference of all available shortcuts
+- **Response Time Hover** — hover over the response time chart in Uptime History to see exact values with a smoothly tracking indicator
 
 ### Fixed
 - Line numbers no longer overflow into the debug console header when scrolling
+- Fixed focus ring appearing on dashboard pin and refresh buttons
 
 ## [1.0] Build 2 — 2026-06-03
 
