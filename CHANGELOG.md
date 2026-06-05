@@ -21,6 +21,9 @@ All notable changes to Outpost Beacon are documented here.
 - **Keyboard Shortcut Reference** — keyboard icon button in the script editor toolbar shows a quick reference of all available shortcuts
 - **Response Time Hover** — hover over the response time chart in Uptime History to see exact values with a smoothly tracking indicator
 
+### Security
+- Improved input validation and resource limits for script execution
+
 ### Fixed
 - Line numbers no longer overflow into the debug console header when scrolling
 - Fixed focus ring appearing on dashboard pin and refresh buttons
