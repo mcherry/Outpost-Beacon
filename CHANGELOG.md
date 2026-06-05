@@ -14,9 +14,11 @@ All notable changes to Outpost Beacon are documented here.
 - **Auto-Close Brackets** — typing `(`, `{`, `[`, `"`, `'`, or `` ` `` auto-inserts the closing pair; backspace deletes empty pairs
 - **Word Wrap Toggle** — toolbar button in the script editor to switch between word wrap and horizontal scrolling
 - **Bracket Matching** — matching brackets highlight in blue when the cursor is adjacent; unmatched brackets highlight in red
+- **Self-Signed Certificate Support** — pass `{insecure: true}` to `fetch()`, `fetchResponse()`, or `fetchText()` to accept self-signed certificates
+- **Cmd+W Close** — all windows (Settings, Uptime History, Script Editor) now close with Cmd+W
 
 ### Security
-- **Network Access Hardening** — scripts are now blocked from accessing localhost, private IP ranges (RFC 1918), link-local addresses, and cloud metadata endpoints via both HTTP and TCP checks
+- Capped `tcpCheck()` timeout to 30 seconds to prevent resource exhaustion
 
 ### Fixed
 - Line numbers no longer overflow into the debug console header when scrolling
