@@ -61,8 +61,11 @@ Outpost Beacon runs JavaScript check scripts using Apple's built-in JavaScriptCo
 | Function | Description |
 |----------|-------------|
 | `fetch(url)` | HTTP GET → parsed JSON object |
+| `fetch(url, {insecure: true})` | HTTP GET accepting self-signed certificates |
 | `fetchResponse(url)` | HTTP GET → `{ status, body }` |
+| `fetchResponse(url, {insecure: true})` | Same, accepting self-signed certificates |
 | `fetchText(url)` | HTTP GET → raw response string |
+| `fetchText(url, {insecure: true})` | Same, accepting self-signed certificates |
 | `fetchAll([url1, url2, ...])` | Concurrent HTTP GET → array of parsed JSON |
 | `output(obj)` | Set the script's result (required, call once) |
 | `statuspageCheck(url)` | One-liner for any Statuspage.io service |
@@ -98,11 +101,24 @@ try {
 ```javascript
 // OUTPOST_NAME = "Database"
 
+
 var result = tcpCheck("db.example.com", 5432, { timeout: 3 });
 output({
     status: result.success ? "operational" : "major_outage",
     responseTimeMs: result.latencyMs
 });
+```
+
+### Example: Self-Signed Certificate
+
+Pass `{insecure: true}` to accept self-signed or untrusted certificates — useful for internal services, NAS devices, and development servers:
+
+```javascript
+// OUTPOST_NAME = "My NAS"
+// OUTPOST_URL = "https://nas.local:8443"
+
+var data = fetch("https://nas.local:8443/api/health", {insecure: true});
+output({ status: data.ok ? "operational" : "major_outage" });
 ```
 
 For more examples and the full scripting reference, see the [Scripting Guide](docs/scripting.md).
