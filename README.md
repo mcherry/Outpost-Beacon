@@ -19,7 +19,7 @@ A macOS menu bar app that monitors the health of key infrastructure services at 
 - **macOS notifications** — opt-in alerts when a service degrades or recovers
 - **Response time tracking** — measures and displays service response time
 - **Response time alerts** — set per-service response time thresholds and get notified when a service gets too slow
-- **Webhook & automation** — trigger webhooks, Slack, or Discord messages on status changes and response time breaches
+- **Webhook & automation** — trigger webhooks, Slack, or Discord messages on status changes and response time breaches, with self-signed certificate support for internal services
 - **Uptime history** — opt-in graphical timeline showing historical uptime and response times per service
 - **Uptime report export** — export uptime data as CSV or PDF
 - **Custom status checks** — write JavaScript scripts to monitor any service using the built-in API
