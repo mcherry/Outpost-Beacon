@@ -2,6 +2,20 @@
 
 All notable changes to Outpost Beacon are documented here.
 
+## [1.2] — 2026-06-09
+
+### Added
+- **Response Time Alerts** — set a per-service response time threshold and get a macOS notification when a service gets too slow; require several consecutive breaches to ignore transient spikes, with a built-in cooldown to prevent alert spam
+- **Webhook & Automation** — trigger a webhook, Slack message, or Discord message when a service changes status or crosses a response time threshold, with configurable trigger conditions (any change, degradation, recovery, or outage) and a Test button to verify your endpoint
+- **Self-Signed Certificate Support for Webhooks** — opt in to accept self-signed certificates on webhook automations pointed at internal services
+- **Script Validation** — the script editor now flags common mistakes inline — missing `output()`, malformed URLs, intervals below the minimum, network calls without error handling, and more — with hover details and one-click fixes for several of them
+- **Auto-Completion** — the editor suggests API functions and metadata directives as you type; press Tab or Return to accept
+- **Inline API Documentation** — hover any built-in function in the editor to see its signature, parameters, return value, and an example
+- **Network Request Log** — the debug console now lists every HTTP and TCP request a script makes during a run, with method, URL, status code, and timing
+
+### Security
+- Additional input validation and hardening across script handling, data export, and outbound requests
+
 ## [1.1] — 2026-06-05
 
 ### Added

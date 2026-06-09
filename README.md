@@ -3,7 +3,7 @@
 A macOS menu bar app that monitors the health of key infrastructure services at a glance.
 
 <p align="center">
-  <img src="screenshots/dashboard.png" width="420" alt="Status Dashboard">
+  <img src="screenshots/dashboard.png" width="800" alt="Status dashboard — all services at a glance">
 </p>
 
 ## Features
@@ -18,26 +18,32 @@ A macOS menu bar app that monitors the health of key infrastructure services at 
 - **Background polling** — refreshes service status on a configurable interval, with optional per-script intervals
 - **macOS notifications** — opt-in alerts when a service degrades or recovers
 - **Response time tracking** — measures and displays service response time
+- **Response time alerts** — set per-service response time thresholds and get notified when a service gets too slow
+- **Webhook & automation** — trigger webhooks, Slack, or Discord messages on status changes and response time breaches, with self-signed certificate support for internal services
 - **Uptime history** — opt-in graphical timeline showing historical uptime and response times per service
 - **Uptime report export** — export uptime data as CSV or PDF
 - **Custom status checks** — write JavaScript scripts to monitor any service using the built-in API
-- **Built-in script editor** — create and debug check scripts with syntax highlighting, templates, and a run console
+- **Built-in script editor** — write and debug check scripts with syntax highlighting, inline validation warnings, auto-completion, hover API docs, a network request log, templates, and a run console
 - **Dark mode support** — adapts to system appearance
 
 <p align="center">
-  <img src="screenshots/general.png" width="420" alt="Settings — General">
-  &nbsp;&nbsp;
-  <img src="screenshots/scripts.png" width="420" alt="Settings — Scripts">
+  <img src="screenshots/script-editor.png" width="800" alt="Built-in script editor with validation, completion, and the network request log">
 </p>
 
 <p align="center">
-  <img src="screenshots/script-editor.png" width="600" alt="Script Editor">
+  <img src="screenshots/uptime-history.png" width="800" alt="Uptime history with health timeline and response-time charts">
 </p>
 
 <p align="center">
-  <img src="screenshots/new-script.png" width="420" alt="New Script Wizard">
+  <img src="screenshots/settings-general.png" width="410" alt="Settings — General">
   &nbsp;&nbsp;
-  <img src="screenshots/uptime-report.png" width="420" alt="Uptime History">
+  <img src="screenshots/settings-scripts.png" width="410" alt="Settings — Scripts">
+</p>
+
+<p align="center">
+  <img src="screenshots/settings-alerts.png" width="410" alt="Settings — Response Time Alerts">
+  &nbsp;&nbsp;
+  <img src="screenshots/settings-automations.png" width="410" alt="Settings — Automations">
 </p>
 
 ## Requirements
