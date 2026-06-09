@@ -2,7 +2,7 @@
 
 All notable changes to Outpost Beacon are documented here.
 
-## [1.2] — Unreleased
+## [1.2] — 2026-06-09
 
 ### Added
 - **Response Time Alerts** — set a per-service response time threshold and get a macOS notification when a service gets too slow; require several consecutive breaches to ignore transient spikes, with a built-in cooldown to prevent alert spam
