@@ -2,6 +2,24 @@
 
 All notable changes to Outpost Beacon are documented here.
 
+## [1.3] — 2026-06-11
+
+### Added
+- **AI Script Assistant** (Beta) — describe what you want to monitor in plain language and get a complete check script drafted for you, which you can review, edit, run, and refine in the editor. Choose between a fully on-device model (Apple Intelligence, requires a supported Mac) or your own local/remote AI server. Generated scripts are never saved or run automatically — they appear in the editor for you to review first. Includes prompt history with one-click rollback.
+- **Code Folding** — collapse and expand `{ }` blocks in the script editor, with fold controls in the gutter and keyboard shortcuts
+- **HTTP Header Inspection** — `fetchHeaders()` returns a response's status code and headers, so checks can assert on rate-limit, cache, or security headers
+- **Content Assertions** — `bodyContains()` checks whether a response contains expected text, and `fetchAndHash()` hashes a response body to detect unexpected content changes
+- **SSL Certificate Monitoring** — `certCheck()` inspects a TLS certificate's expiry and trust so you can be warned before a certificate lapses
+- **DNS Resolution Checks** — `dnsLookup()` resolves A/AAAA/CNAME/MX/TXT/NS records with TTLs, and can query a specific DNS server directly to verify an internal resolver
+- **Domain Expiry Monitoring** — `domainExpiry()` looks up a domain's registration expiry via RDAP, with `whoisQuery()` as a fallback for TLDs without RDAP
+- **Multi-Layer Check template** — a new wizard template that cascades through an API, HTTP, and TCP fallback for more granular health states
+
+### Changed
+- Editor keyboard shortcuts now include Save (⌘S) and Run (⌘R)
+
+### Security
+- Continued input validation and hardening across script execution, network response handling, and the new integrations
+
 ## [1.2] — 2026-06-09
 
 ### Added
