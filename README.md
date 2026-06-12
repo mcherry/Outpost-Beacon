@@ -23,7 +23,8 @@ A macOS menu bar app that monitors the health of key infrastructure services at 
 - **Uptime history** — opt-in graphical timeline showing historical uptime and response times per service
 - **Uptime report export** — export uptime data as CSV or PDF
 - **Custom status checks** — write JavaScript scripts to monitor any service using the built-in API
-- **Built-in script editor** — write and debug check scripts with syntax highlighting, inline validation warnings, auto-completion, hover API docs, a network request log, templates, and a run console
+- **AI script assistant** (Beta) — describe a check in plain language and have a starting script drafted for you, either fully on-device with Apple Intelligence or via your own local/remote AI server; you review and edit it before it's used
+- **Built-in script editor** — write and debug check scripts with syntax highlighting, code folding, inline validation warnings, auto-completion, hover API docs, a network request log, templates, and a run console
 - **Dark mode support** — adapts to system appearance
 
 <p align="center">
@@ -83,9 +84,16 @@ Outpost Beacon runs JavaScript check scripts using Apple's built-in JavaScriptCo
 | `fetchText(url)` | HTTP GET → raw response string |
 | `fetchText(url, {insecure: true})` | Same, accepting self-signed certificates |
 | `fetchAll([url1, url2, ...])` | Concurrent HTTP GET → array of parsed JSON |
+| `fetchHeaders(url)` | Inspect HTTP response headers → `{ success, statusCode, headers, error }` |
+| `fetchAndHash(url)` | SHA-256 hash of the response body (content-drift detection) → `{ success, statusCode, hash, byteCount, error }` |
+| `bodyContains(url, expected)` | Check whether a response body contains a substring → `{ success, statusCode, contains, error }` |
 | `output(obj)` | Set the script's result (required, call once) |
 | `statuspageCheck(url)` | One-liner for any Statuspage.io service |
 | `tcpCheck(host, port, options?)` | TCP connect check → `{ success, latencyMs, error }` |
+| `certCheck(host[, port])` | Inspect a TLS certificate's expiry and trust → `{ valid, trusted, daysRemaining, notAfter, issuer, ... }` |
+| `dnsLookup(hostname[, type][, options])` | DNS query with TTLs (A/AAAA/CNAME/MX/TXT/NS); optionally query a specific resolver |
+| `domainExpiry(domain)` | Domain registration expiry via RDAP → `{ success, expiryDate, daysRemaining, registrar, ... }` |
+| `whoisQuery(domain, server)` | Raw WHOIS lookup for TLDs without RDAP → `{ success, raw, expiryDate, daysRemaining, error }` |
 | `stripHtml(text)` | Remove HTML tags and decode entities |
 | `log(message)` | Debug logging |
 
@@ -135,6 +143,23 @@ Pass `{insecure: true}` to accept self-signed or untrusted certificates — usef
 
 var data = fetch("https://nas.local:8443/api/health", {insecure: true});
 output({ status: data.ok ? "operational" : "major_outage" });
+```
+
+### Example: SSL Certificate Expiry
+
+Warn before a TLS certificate lapses:
+
+```javascript
+// OUTPOST_NAME = "example.com TLS"
+
+var c = certCheck("example.com");
+if (!c.valid || c.daysRemaining <= 7) {
+    output({ status: "major_outage" });
+} else if (c.daysRemaining <= 30) {
+    output({ status: "degraded" });
+} else {
+    output({ status: "operational" });
+}
 ```
 
 For more examples and the full scripting reference, see the [Scripting Guide](docs/scripting.md).

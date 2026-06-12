@@ -33,6 +33,9 @@ Add comment directives at the top of your script to configure how Outpost Beacon
 | `fetchResponse(url)` | `{status, body}` | HTTP GET with status code access |
 | `fetchText(url)` | String | HTTP GET, returns raw text |
 | `fetchAll([url1, url2, ...])` | Array | Concurrent HTTP GET, returns array of parsed JSON |
+| `fetchHeaders(url)` | `{success, statusCode, headers, error}` | Inspect HTTP response headers (HEAD by default; pass `{method: "GET"}` to use GET). Header names are lowercased. |
+| `fetchAndHash(url)` | `{success, statusCode, hash, byteCount, error}` | SHA-256 hash of the response body, for detecting content changes |
+| `bodyContains(url, expected)` | `{success, statusCode, contains, error}` | Whether the response body contains a substring (case-sensitive) |
 
 ### Check Helpers
 
@@ -42,6 +45,12 @@ Add comment directives at the top of your script to configure how Outpost Beacon
 | `statuspageCheck(url, {showcaseFilter: false})` | — | Same, but includes all components |
 | `tcpCheck(host, port)` | `{success, latencyMs, error}` | TCP connection check |
 | `tcpCheck(host, port, {timeout: 5})` | `{success, latencyMs, error}` | TCP check with custom timeout (seconds) |
+| `certCheck(host)` | `{valid, trusted, daysRemaining, notAfter, issuer, sanList, ...}` | Inspect a TLS certificate's expiry and trust (use `certCheck(host, port)` for a non-443 port) |
+| `dnsLookup(hostname)` | `{success, records, server, ...}` | DNS query (system resolver), A records by default |
+| `dnsLookup(hostname, "MX")` | `{success, records, ...}` | Query a specific record type: A, AAAA, CNAME, MX, TXT, NS |
+| `dnsLookup(hostname, "A", {server: "10.0.0.1"})` | `{success, records, ...}` | Query a specific DNS server directly |
+| `domainExpiry(domain)` | `{success, expiryDate, daysRemaining, registrar, ...}` | Domain registration expiry via RDAP |
+| `whoisQuery(domain, server)` | `{success, raw, expiryDate, daysRemaining, error}` | Raw WHOIS lookup for TLDs without RDAP |
 
 ### Utility Functions
 
